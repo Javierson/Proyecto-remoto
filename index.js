@@ -1,26 +1,12 @@
-import React, { Component } from 'react';
-import { render } from 'react-dom';
-import Hello from './Hello';
-import './style.css';
+import React from "react";
+import { App } from "./src/App/index";
+// import '.src/Styles/App.css'
+import { render } from "react-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 
-class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      name: 'React'
-    };
-  }
-
-  render() {
-    return (
-      <div>
-        <Hello name={this.state.name} />
-        <p>
-          Start editing to see some magic happen :)
-        </p>
-      </div>
-    );
-  }
-}
-
-render(<App />, document.getElementById('root'));
+render(
+  <Router>
+    <App />
+  </Router>,
+  document.getElementById("root")
+);
